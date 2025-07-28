@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PDF Outline Schema",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string" },
+    "outline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "level": { "type": "string", "enum": ["H1", "H2", "H3"] },
+          "text": { "type": "string" },
+          "page": { "type": "integer", "minimum": 1 }
+        },
+        "required": ["level", "text", "page"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["title", "outline"],
+  "additionalProperties": false
+}
